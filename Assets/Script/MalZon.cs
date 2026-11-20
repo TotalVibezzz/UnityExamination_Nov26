@@ -3,16 +3,25 @@ using TMPro;
 
 public class SimpleGoal : MonoBehaviour
 {
+    public static bool gameWon = false;
+
     public int requiredScore = 3;
     public TMP_Text winText;
     public string message = "Banan klar!";
+    public Animator playerAnimator;
+    public string winAnimationName = "Win";
 
     private bool goalUnlocked = false;
-    private bool won = false;
 
     void Start()
     {
-        if (winText != null) winText.gameObject.SetActive(false);
+        gameWon = false;
+
+        if (winText != null)
+        {
+            winText.gameObject.SetActive(false);
+        }
+
         gameObject.SetActive(false);
     }
 
@@ -27,9 +36,27 @@ public class SimpleGoal : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (!won && goalUnlocked && other.CompareTag("Player"))
+        if (!gameWon && goalUnlocked && other.CompareTag("Player"))
         {
-            won = true;
+            gameWon = true;
+
+            Rigidbody2D rb = other.GetComponent<Rigidbody2D>();
+            if (rb != null)
+            {
+                rb.linearVelocity = Vector2.zero;
+                rb.angularVelocity = 0f;
+            }
+
+            if (playerAnimator == null)
+            {
+                playerAnimator = other.GetComponentInChildren<Animator>();
+            }
+
+            if (playerAnimator != null && !string.IsNullOrEmpty(winAnimationName))
+            {
+                playerAnimator.Play(winAnimationName);
+            }
+
             if (winText != null)
             {
                 winText.text = message;
