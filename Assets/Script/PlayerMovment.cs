@@ -6,6 +6,7 @@ public class SimplePlayer : MonoBehaviour
 {
     public float speed = 7f;
     public float jumpForce = 11f;
+    public float slideAccel = 12f;
     public string nextSceneName = "StoryScene";
 
     private Rigidbody2D rb;
@@ -24,7 +25,12 @@ public class SimplePlayer : MonoBehaviour
         if (kb.aKey.isPressed || kb.leftArrowKey.isPressed) x -= 1f;
         if (kb.dKey.isPressed || kb.rightArrowKey.isPressed) x += 1f;
 
-        rb.linearVelocity = new Vector2(x * speed, rb.linearVelocity.y);
+        if (x != 0f)
+        {
+            float targetVx = x * speed;
+            float newVx = Mathf.MoveTowards(rb.linearVelocity.x, targetVx, slideAccel * Time.deltaTime);
+            rb.linearVelocity = new Vector2(newVx, rb.linearVelocity.y);
+        }
 
         if (kb.spaceKey.wasPressedThisFrame)
         {
