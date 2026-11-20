@@ -422,7 +422,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SimpleGoal
   requiredScore: 3
   winText: {fileID: 1644952185}
-  message: Banan klar!
+  message: Du klarade det!
 --- !u!212 &186774632
 SpriteRenderer:
   serializedVersion: 2
@@ -491,8 +491,8 @@ Transform:
   m_GameObject: {fileID: 186774630}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.32525, y: -1.84234, z: 0.47}
-  m_LocalScale: {x: 1.5722, y: 2.2324, z: 1}
+  m_LocalPosition: {x: 1.32525, y: -1.9672, z: 0.47}
+  m_LocalScale: {x: 1.5722, y: 2.4822054, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1743495886}
@@ -2253,7 +2253,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 47, y: 306.39}
+  m_AnchoredPosition: {x: -14, y: 266}
   m_SizeDelta: {x: 634.76, y: 217.2153}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1644952185
@@ -2285,8 +2285,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4294115571
+  m_fontColor: {r: 0.9528302, g: 0, b: 0.9528302, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3039,7 +3039,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 282, y: -255}
+  m_AnchoredPosition: {x: 264.38, y: -238}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2009240098
